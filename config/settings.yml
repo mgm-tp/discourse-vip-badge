@@ -1,0 +1,14 @@
+plugins:
+  vip_badge_enabled:
+    client: true
+    default: true
+    type: bool
+  vip_badge_group_names:
+    client: true
+    default: ""
+    type: list
+    list_type: compact
+  vip_badge_text:
+    client: true
+    default: "VIP"
+    type: string

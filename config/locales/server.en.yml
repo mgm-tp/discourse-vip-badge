@@ -1,0 +1,5 @@
+en:
+  site_settings:
+    vip_badge_enabled: "Show badge"
+    vip_badge_group_names: "Groups with VIP members"
+    vip_badge_text: "Text to display on the VIP badge (e.g., VIP, PREMIUM, GOLD)"
