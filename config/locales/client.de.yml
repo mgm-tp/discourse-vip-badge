@@ -1,0 +1,9 @@
+de:
+  admin_js:
+    admin:
+      site_settings:
+        categories:
+          discourse_vip_badge: "VIP Badge"
+  js:
+    discourse_vip_badge:
+      title: "VIP Badge"
