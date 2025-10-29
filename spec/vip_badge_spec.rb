@@ -2,7 +2,7 @@
 
 require "rails_helper"
 
-describe "Discourse VIP Badge Plugin" do
+describe PostsController do
   let(:vip_group) { Fabricate(:group, name: "vip") }
   let(:premium_group) { Fabricate(:group, name: "premium") }
   let(:regular_group) { Fabricate(:group, name: "regular") }
