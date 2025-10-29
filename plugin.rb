@@ -2,7 +2,7 @@
 
 # name: discourse-vip-badge
 # about: Adds a VIP badge to posts from users in designated VIP groups, visible only to staff members
-# version: 1.0.0
+# version: 1.1.0
 # authors: mgm technology partners
 # url: https://github.com/mgm-tp/discourse-vip-badge
 
@@ -24,5 +24,10 @@ after_initialize do
   # Add VIP status to post serializer for staff members
   add_to_serializer(:post, :is_vip_user, include_condition: -> { scope.is_staff? }) do
     object.user&.is_vip_user?
+  end
+
+  # Add VIP group display name to post serializer for staff members
+  add_to_serializer(:post, :vip_group_display_name, include_condition: -> { scope.is_staff? }) do
+    object.user&.vip_group_display_name if object.user&.is_vip_user?
   end
 end

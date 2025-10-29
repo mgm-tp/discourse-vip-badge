@@ -6,8 +6,13 @@ plugins:
   vip_badge_group_names:
     client: true
     default: ""
-    type: list
-    list_type: compact
+    type: group_list
+    allow_any: false  # For choice settings allow items not specified in the choice list (default true)
+    refresh: false    # Set to true if clients should refresh when the setting is changed.
+  vip_badge_use_group_name:
+    client: true
+    default: false
+    type: bool
   vip_badge_text:
     client: true
     default: "VIP"

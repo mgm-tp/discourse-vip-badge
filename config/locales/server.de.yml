@@ -2,4 +2,5 @@ de:
   site_settings:
     vip_badge_enabled: "Badge anzeigen"
     vip_badge_group_names: "Gruppen mit VIP-Mitgliedern"
-    vip_badge_text: "Text, der auf dem VIP-Badge angezeigt werden soll (z.B. VIP, PREMIUM, GOLD)"
+    vip_badge_use_group_name: "Gruppennamen verwendent (anstelle des statischen textes)"
+    vip_badge_text: "Text, der auf dem VIP-Badge angezeigt werden soll (Wenn deaktiviert ist)"

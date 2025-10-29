@@ -9,13 +9,20 @@ function initializeVipBadge(api) {
     return;
   }
 
-  // Track the VIP status property for posts
-  api.addTrackedPostProperties("is_vip_user");
+  // Track the VIP status and group display name properties for posts
+  api.addTrackedPostProperties("is_vip_user", "vip_group_display_name");
 
   // Add VIP poster icon
-  api.addPosterIcon((_, { is_vip_user }) => {
+  api.addPosterIcon((_, { is_vip_user, vip_group_display_name }) => {
     if (is_vip_user) {
-      const badgeText = siteSettings.vip_badge_text;
+      let badgeText;
+      
+      if (siteSettings.vip_badge_use_group_name && vip_group_display_name) {
+        badgeText = vip_group_display_name;
+      } else {
+        badgeText = siteSettings.vip_badge_text || "VIP";
+      }
+      
       return {
         icon: "crown",
         title: "VIP User",
