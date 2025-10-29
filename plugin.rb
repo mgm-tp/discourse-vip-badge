@@ -5,6 +5,9 @@
 # version: 1.1.0
 # authors: mgm technology partners
 # url: https://github.com/mgm-tp/discourse-vip-badge
+# meta_topic_id: tbd
+
+enabled_site_setting :vip_badge_enabled
 
 register_asset "stylesheets/vip-badge.scss"
 register_svg_icon "crown"

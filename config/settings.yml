@@ -1,4 +1,4 @@
-plugins:
+discourse_vip_badge:
   vip_badge_enabled:
     client: true
     default: true
