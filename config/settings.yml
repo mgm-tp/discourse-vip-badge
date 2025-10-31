@@ -17,3 +17,23 @@ discourse_vip_badge:
     client: true
     default: "VIP"
     type: string
+  vip_badge_visibility:
+    client: true
+    default: "staff"
+    type: enum
+    choices:
+      - all
+      - has trust level
+      - is staff or has trust level
+      - is staff
+      - is staff and has trust level
+  vip_badge_visibility_min_trust_level:
+    client: true
+    default: "4"
+    type: enum
+    choices:
+      - "0"
+      - "1"
+      - "2"
+      - "3"
+      - "4"

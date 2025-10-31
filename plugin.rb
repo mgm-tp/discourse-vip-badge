@@ -1,8 +1,8 @@
 # frozen_string_literal: true
 
 # name: discourse-vip-badge
-# about: Adds a VIP badge to posts from users in designated VIP groups, visible only to staff members
-# version: 1.1.0
+# about: Adds a VIP badge to posts from users in designated VIP groups, with configurable visibility
+# version: 1.2.0
 # authors: mgm technology partners
 # url: https://github.com/mgm-tp/discourse-vip-badge
 # meta_topic_id: tbd
@@ -14,6 +14,27 @@ register_svg_icon "crown"
 
 module ::VipBadge
   PLUGIN_NAME = "discourse-vip-badge"
+
+  # Helper function for VIP badge visibility
+  def self.visible_to_scope?(scope)
+    case SiteSetting.vip_badge_visibility
+    when "all"
+      true
+    when "has trust level"
+      min_trust = SiteSetting.vip_badge_visibility_min_trust_level.to_i
+      scope.user.present? && scope.user.trust_level >= min_trust
+    when "is staff or has trust level"
+      min_trust = SiteSetting.vip_badge_visibility_min_trust_level.to_i
+      (scope.is_staff?) || (scope.user.present? && scope.user.trust_level >= min_trust)
+    when "is staff"
+      scope.is_staff?
+    when "is staff and has trust level"
+      min_trust = SiteSetting.vip_badge_visibility_min_trust_level.to_i
+      scope.is_staff? && scope.user.present? && scope.user.trust_level >= min_trust
+    else
+      false
+    end
+  end
 end
 
 after_initialize do
@@ -24,13 +45,17 @@ after_initialize do
   # Apply extensions to existing classes
   reloadable_patch { |plugin| User.prepend(VipBadge::UserExtension) }
 
-  # Add VIP status to post serializer for staff members
-  add_to_serializer(:post, :is_vip_user, include_condition: -> { scope.is_staff? }) do
-    object.user&.is_vip_user?
-  end
+  # Add VIP status to post serializer with configurable visibility
+  add_to_serializer(
+    :post,
+    :is_vip_user,
+    include_condition: -> { ::VipBadge.visible_to_scope?(scope) },
+  ) { object.user&.is_vip_user? }
 
-  # Add VIP group display name to post serializer for staff members
-  add_to_serializer(:post, :vip_group_display_name, include_condition: -> { scope.is_staff? }) do
-    object.user&.vip_group_display_name if object.user&.is_vip_user?
-  end
+  # Add VIP group display name to post serializer with configurable visibility
+  add_to_serializer(
+    :post,
+    :vip_group_display_name,
+    include_condition: -> { ::VipBadge.visible_to_scope?(scope) },
+  ) { object.user&.vip_group_display_name if object.user&.is_vip_user? }
 end
