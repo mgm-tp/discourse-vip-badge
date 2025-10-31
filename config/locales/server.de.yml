@@ -4,5 +4,6 @@ de:
     vip_badge_group_names: "Gruppen mit VIP-Mitgliedern"
     vip_badge_use_group_name: "Gruppennamen verwendent (anstelle des statischen textes)"
     vip_badge_text: "Text, der auf dem VIP-Badge angezeigt werden soll (Wenn deaktiviert ist)"
+    vip_badge_icon: "Symbol, das auf dem VIP-Badge angezeigt werden soll (leer lassen für kein Symbol)"
     vip_badge_visibility: "Badge nur für einen Benutzer anzeigen, der"
     vip_badge_visibility_min_trust_level: "Mindestvertrauensstufe, um das VIP-Badge zu sehen"

@@ -17,6 +17,10 @@ discourse_vip_badge:
     client: true
     default: "VIP"
     type: string
+  vip_badge_icon:
+    client: true
+    default: "crown"
+    type: string
   vip_badge_visibility:
     client: true
     default: "staff"

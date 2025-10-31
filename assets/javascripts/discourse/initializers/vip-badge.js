@@ -18,7 +18,7 @@ function initializeVipBadge(api) {
       }
 
       return {
-        icon: "crown",
+        icon: siteSettings.vip_badge_icon,
         title: "VIP User",
         className: "vip-badge-icon",
         text: badgeText,
