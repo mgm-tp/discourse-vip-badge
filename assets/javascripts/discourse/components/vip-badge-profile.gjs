@@ -1,0 +1,47 @@
+import Component from "@glimmer/component";
+import { service } from "@ember/service";
+import icon from "discourse/helpers/d-icon";
+import {
+  getBadgeIcon,
+  getBadgeText,
+  isProfileBadgeEnabled,
+} from "../lib/vip-badge-helpers";
+
+export default class VipBadgeProfile extends Component {
+  @service siteSettings;
+
+  get shouldShow() {
+    // Backend serializer already enforces visibility permissions.
+    // If is_vip_user is present in the model, the current user has permission to see it.
+    return (
+      isProfileBadgeEnabled(this.siteSettings) &&
+      this.args.outletArgs?.model?.is_vip_user
+    );
+  }
+
+  get badgeText() {
+    return getBadgeText(
+      this.siteSettings,
+      this.args.outletArgs?.model?.vip_group_display_name
+    );
+  }
+
+  get badgeIcon() {
+    return getBadgeIcon(this.siteSettings);
+  }
+
+  <template>
+    {{#if this.shouldShow}}
+      <span
+        class="vip-badge-icon"
+        style="padding-top: 2px; padding-bottom: 2px;"
+        title="{{this.badgeText}}"
+      >
+        {{#if this.badgeIcon}}
+          {{icon this.badgeIcon}}
+        {{/if}}
+        {{this.badgeText}}
+      </span>
+    {{/if}}
+  </template>
+}

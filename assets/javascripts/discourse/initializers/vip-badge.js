@@ -1,30 +1,38 @@
 import { withPluginApi } from "discourse/lib/plugin-api";
+import VipBadgeProfile from "../components/vip-badge-profile";
+import {
+  getBadgeIcon,
+  getBadgeText,
+  isBadgeEnabled,
+} from "../lib/vip-badge-helpers";
 
 function initializeVipBadge(api) {
   const siteSettings = api.container.lookup("service:site-settings");
+
+  // Only initialize if badges are enabled
+  if (!isBadgeEnabled(siteSettings)) {
+    return;
+  }
 
   // Track the VIP status and group display name properties for posts
   api.addTrackedPostProperties("is_vip_user", "vip_group_display_name");
 
   // Add VIP poster icon
+  // Backend serializer already enforces visibility permissions.
+  // If is_vip_user is present in the post data, the current user has permission to see it.
   api.addPosterIcon((_, { is_vip_user, vip_group_display_name }) => {
     if (is_vip_user) {
-      let badgeText;
-
-      if (siteSettings.vip_badge_use_group_name && vip_group_display_name) {
-        badgeText = vip_group_display_name;
-      } else {
-        badgeText = siteSettings.vip_badge_text || "VIP";
-      }
-
       return {
-        icon: siteSettings.vip_badge_icon,
+        icon: getBadgeIcon(siteSettings),
         title: "VIP User",
         className: "vip-badge-icon",
-        text: badgeText,
+        text: getBadgeText(siteSettings, vip_group_display_name),
       };
     }
   });
+
+  // Add VIP badge to user profiles using renderInOutlet
+  api.renderInOutlet("user-post-names", VipBadgeProfile);
 }
 
 export default {

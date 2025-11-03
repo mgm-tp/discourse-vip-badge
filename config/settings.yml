@@ -3,6 +3,10 @@ discourse_vip_badge:
     client: true
     default: true
     type: bool
+  vip_badge_show_on_profile:
+    client: true
+    default: false
+    type: bool
   vip_badge_group_names:
     client: true
     default: ""
