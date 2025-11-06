@@ -2,9 +2,21 @@ en:
   site_settings:
     vip_badge_enabled: "Show badge"
     vip_badge_show_on_profile: "Show VIP badge on user profiles"
-    vip_badge_group_names: "Groups with VIP members"
-    vip_badge_use_group_name: "Use group name as badge text (instead of static text)"
-    vip_badge_text: "Text to display on the VIP badge (when 'Use group name' is disabled)"
-    vip_badge_icon: "Icon to display on the VIP badge (leave empty for no icon)"
+    vip_badge_use_group_name: "Use group name as badge text (instead of tier-specific text)"
     vip_badge_visibility: "Only display the badge to a user, who"
     vip_badge_visibility_min_trust_level: "Minimum trust level to see VIP badge"
+
+    vip_badge_bronze_groups: "Groups for Bronze tier VIP badge"
+    vip_badge_bronze_text: "Text to display for Bronze tier VIP badge"
+    vip_badge_bronze_icon: "Icon to display for Bronze tier VIP badge"
+    vip_badge_bronze_custom_css: "Custom CSS styles for Bronze tier VIP badge (inline style attribute)"
+
+    vip_badge_silver_groups: "Groups for Silver tier VIP badge"
+    vip_badge_silver_text: "Text to display for Silver tier VIP badge"
+    vip_badge_silver_icon: "Icon to display for Silver tier VIP badge"
+    vip_badge_silver_custom_css: "Custom CSS styles for Silver tier VIP badge (inline style attribute)"
+
+    vip_badge_gold_groups: "Groups for Gold tier VIP badge"
+    vip_badge_gold_text: "Text to display for Gold tier VIP badge"
+    vip_badge_gold_icon: "Icon to display for Gold tier VIP badge"
+    vip_badge_gold_custom_css: "Custom CSS styles for Gold tier VIP badge (inline style attribute)"

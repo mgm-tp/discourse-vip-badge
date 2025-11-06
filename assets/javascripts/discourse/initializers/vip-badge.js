@@ -14,22 +14,32 @@ function initializeVipBadge(api) {
     return;
   }
 
-  // Track the VIP status and group display name properties for posts
-  api.addTrackedPostProperties("is_vip_user", "vip_group_display_name");
+  // Track the VIP status, tier, and group display name properties for posts
+  api.addTrackedPostProperties(
+    "is_vip_user",
+    "vip_badge_tier",
+    "vip_group_display_name"
+  );
 
   // Add VIP poster icon
   // Backend serializer already enforces visibility permissions.
   // If is_vip_user is present in the post data, the current user has permission to see it.
-  api.addPosterIcon((_, { is_vip_user, vip_group_display_name }) => {
-    if (is_vip_user) {
-      return {
-        icon: getBadgeIcon(siteSettings),
-        title: "VIP User",
-        className: "vip-badge-icon",
-        text: getBadgeText(siteSettings, vip_group_display_name),
-      };
+  api.addPosterIcon(
+    (_, { is_vip_user, vip_badge_tier, vip_group_display_name }) => {
+      if (is_vip_user) {
+        return {
+          icon: getBadgeIcon(siteSettings, vip_badge_tier),
+          title: "VIP User",
+          className: "vip-badge-icon vip-badge-" + vip_badge_tier,
+          text: getBadgeText(
+            siteSettings,
+            vip_badge_tier,
+            vip_group_display_name
+          ),
+        };
+      }
     }
-  });
+  );
 
   // Add VIP badge to user profiles using renderInOutlet
   api.renderInOutlet("user-post-names", VipBadgeProfile);

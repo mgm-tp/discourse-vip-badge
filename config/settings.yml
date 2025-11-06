@@ -7,24 +7,10 @@ discourse_vip_badge:
     client: true
     default: false
     type: bool
-  vip_badge_group_names:
-    client: true
-    default: ""
-    type: group_list
-    allow_any: false  # For choice settings allow items not specified in the choice list (default true)
-    refresh: false    # Set to true if clients should refresh when the setting is changed.
   vip_badge_use_group_name:
     client: true
     default: false
     type: bool
-  vip_badge_text:
-    client: true
-    default: "VIP"
-    type: string
-  vip_badge_icon:
-    client: true
-    default: "crown"
-    type: string
   vip_badge_visibility:
     client: true
     default: "staff"
@@ -45,3 +31,62 @@ discourse_vip_badge:
       - "2"
       - "3"
       - "4"
+
+  # I wanted to use objects here, but site settings doesn't support that well enough yet
+  # https://meta.discourse.org/t/objects-type-for-theme-setting/305009
+  vip_badge_bronze_groups:
+    client: true
+    default: ""
+    type: group_list
+    allow_any: false
+    refresh: false
+  vip_badge_bronze_text:
+    client: true
+    default: "Bronze VIP"
+    type: string
+  vip_badge_bronze_icon:
+    client: true
+    default: "medal"
+    type: string
+  vip_badge_bronze_custom_css:
+    client: true
+    default: ""
+    type: string
+
+  vip_badge_silver_groups:
+    client: true
+    default: ""
+    type: group_list
+    allow_any: false
+    refresh: false
+  vip_badge_silver_text:
+    client: true
+    default: "Silver VIP"
+    type: string
+  vip_badge_silver_icon:
+    client: true
+    default: "star"
+    type: string
+  vip_badge_silver_custom_css:
+    client: true
+    default: ""
+    type: string
+
+  vip_badge_gold_groups:
+    client: true
+    default: ""
+    type: group_list
+    allow_any: false
+    refresh: false
+  vip_badge_gold_text:
+    client: true
+    default: "Gold VIP"
+    type: string
+  vip_badge_gold_icon:
+    client: true
+    default: "crown"
+    type: string
+  vip_badge_gold_custom_css:
+    client: true
+    default: ""
+    type: string

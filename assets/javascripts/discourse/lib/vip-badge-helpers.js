@@ -3,25 +3,51 @@
  */
 
 /**
- * Get the badge text based on settings and group name
+ * Get the badge text based on tier and settings
  * @param {Object} siteSettings - The site settings service
+ * @param {string} tier - The VIP tier (gold, silver, bronze)
  * @param {string} vipGroupDisplayName - The VIP group display name (if available)
  * @returns {string} The badge text to display
  */
-export function getBadgeText(siteSettings, vipGroupDisplayName) {
+export function getBadgeText(siteSettings, tier, vipGroupDisplayName) {
+  // If use_group_name is enabled and we have a group display name, use it
   if (siteSettings.vip_badge_use_group_name && vipGroupDisplayName) {
     return vipGroupDisplayName;
   }
-  return siteSettings.vip_badge_text || "VIP";
+
+  // Otherwise, use tier-specific text
+  if (tier) {
+    return siteSettings[`vip_badge_${tier}_text`] || "";
+  }
+
+  return "VIP";
 }
 
 /**
- * Get the badge icon from settings
+ * Get the badge icon based on tier and settings
  * @param {Object} siteSettings - The site settings service
+ * @param {string} tier - The VIP tier (gold, silver, bronze)
  * @returns {string} The icon name
  */
-export function getBadgeIcon(siteSettings) {
-  return siteSettings.vip_badge_icon;
+export function getBadgeIcon(siteSettings, tier) {
+  if (tier) {
+    return siteSettings[`vip_badge_${tier}_icon`] || "";
+  }
+
+  return "";
+}
+
+/**
+ * Get custom CSS for a tier
+ * @param {Object} siteSettings - The site settings service
+ * @param {string} tier - The VIP tier (gold, silver, bronze)
+ * @returns {string} Custom CSS string or empty string
+ */
+export function getBadgeCustomCss(siteSettings, tier) {
+  if (tier) {
+    return siteSettings[`vip_badge_${tier}_custom_css`] || "";
+  }
+  return "";
 }
 
 /**
@@ -41,5 +67,7 @@ export function isBadgeEnabled(siteSettings) {
  * @returns {boolean} True if profile badges are enabled
  */
 export function isProfileBadgeEnabled(siteSettings) {
-  return siteSettings.vip_badge_enabled && siteSettings.vip_badge_show_on_profile;
+  return (
+    siteSettings.vip_badge_enabled && siteSettings.vip_badge_show_on_profile
+  );
 }

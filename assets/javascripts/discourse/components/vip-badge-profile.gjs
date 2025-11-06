@@ -2,6 +2,7 @@ import Component from "@glimmer/component";
 import { service } from "@ember/service";
 import icon from "discourse/helpers/d-icon";
 import {
+  getBadgeCustomCss,
   getBadgeIcon,
   getBadgeText,
   isProfileBadgeEnabled,
@@ -19,22 +20,31 @@ export default class VipBadgeProfile extends Component {
     );
   }
 
+  get tier() {
+    return this.args.outletArgs?.model?.vip_badge_tier;
+  }
+
   get badgeText() {
     return getBadgeText(
       this.siteSettings,
+      this.tier,
       this.args.outletArgs?.model?.vip_group_display_name
     );
   }
 
   get badgeIcon() {
-    return getBadgeIcon(this.siteSettings);
+    return getBadgeIcon(this.siteSettings, this.tier);
+  }
+
+  get customCss() {
+    return getBadgeCustomCss(this.siteSettings, this.tier);
   }
 
   <template>
     {{#if this.shouldShow}}
       <span
-        class="vip-badge-icon"
-        style="padding-top: 2px; padding-bottom: 2px;"
+        class="vip-badge-icon vip-badge-{{this.tier}}"
+        style="{{this.customCss}}"
         title="{{this.badgeText}}"
       >
         {{#if this.badgeIcon}}

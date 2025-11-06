@@ -11,6 +11,8 @@ enabled_site_setting :vip_badge_enabled
 
 register_asset "stylesheets/vip-badge.scss"
 register_svg_icon "crown"
+register_svg_icon "star"
+register_svg_icon "medal"
 
 module ::VipBadge
   PLUGIN_NAME = "discourse-vip-badge"
@@ -52,6 +54,13 @@ after_initialize do
     include_condition: -> { ::VipBadge.visible_to_scope?(scope) },
   ) { object.user&.is_vip_user? }
 
+  # Add VIP badge tier to post serializer with configurable visibility
+  add_to_serializer(
+    :post,
+    :vip_badge_tier,
+    include_condition: -> { ::VipBadge.visible_to_scope?(scope) },
+  ) { object.user&.vip_badge_tier if object.user&.is_vip_user? }
+
   # Add VIP group display name to post serializer with configurable visibility
   add_to_serializer(
     :post,
@@ -63,13 +72,26 @@ after_initialize do
   add_to_serializer(
     :user,
     :is_vip_user,
-    include_condition: -> { SiteSetting.vip_badge_show_on_profile && ::VipBadge.visible_to_scope?(scope) },
+    include_condition: -> do
+      SiteSetting.vip_badge_show_on_profile && ::VipBadge.visible_to_scope?(scope)
+    end,
   ) { object.is_vip_user? }
+
+  # Add VIP badge tier to user serializer for user profiles
+  add_to_serializer(
+    :user,
+    :vip_badge_tier,
+    include_condition: -> do
+      SiteSetting.vip_badge_show_on_profile && ::VipBadge.visible_to_scope?(scope)
+    end,
+  ) { object.vip_badge_tier if object.is_vip_user? }
 
   # Add VIP group display name to user serializer for user profiles
   add_to_serializer(
     :user,
     :vip_group_display_name,
-    include_condition: -> { SiteSetting.vip_badge_show_on_profile && ::VipBadge.visible_to_scope?(scope) },
+    include_condition: -> do
+      SiteSetting.vip_badge_show_on_profile && ::VipBadge.visible_to_scope?(scope)
+    end,
   ) { object.vip_group_display_name if object.is_vip_user? }
 end
