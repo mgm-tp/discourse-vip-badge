@@ -2,7 +2,6 @@ import Component from "@glimmer/component";
 import { service } from "@ember/service";
 import icon from "discourse/helpers/d-icon";
 import {
-  getBadgeCustomCss,
   getBadgeIcon,
   getBadgeText,
   isProfileBadgeEnabled,
@@ -36,15 +35,10 @@ export default class VipBadgeProfile extends Component {
     return getBadgeIcon(this.siteSettings, this.tier);
   }
 
-  get customCss() {
-    return getBadgeCustomCss(this.siteSettings, this.tier);
-  }
-
   <template>
     {{#if this.shouldShow}}
       <span
-        class="vip-badge-icon vip-badge-{{this.tier}}"
-        style={{this.customCss}}
+        class="vip-badge vip-badge-on-profile vip-badge-{{this.tier}}"
         title={{this.badgeText}}
       >
         {{#if this.badgeIcon}}

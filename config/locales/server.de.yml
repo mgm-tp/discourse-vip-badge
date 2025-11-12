@@ -1,22 +1,19 @@
 de:
   site_settings:
     vip_badge_enabled: "Badge anzeigen"
-    vip_badge_show_on_profile: "VIP-Badge auf Benutzerprofilen anzeigen"
+    vip_badge_show_on_profile: "VIP Abzeichen auf Benutzerprofilen anzeigen"
     vip_badge_use_group_name: "Gruppennamen verwenden (anstelle des tier-spezifischen Textes)"
     vip_badge_visibility: "Badge nur für einen Benutzer anzeigen, der"
-    vip_badge_visibility_min_trust_level: "Mindestvertrauensstufe, um das VIP-Badge zu sehen"
+    vip_badge_visibility_min_trust_level: "Mindestvertrauensstufe, um das VIP Abzeichen zu sehen"
 
-    vip_badge_bronze_groups: "Gruppen für Bronze-Tier-VIP-Badge"
-    vip_badge_bronze_text: "Anzuzeigender Text für Bronze-Tier-VIP-Badge"
-    vip_badge_bronze_icon: "Anzuzeigendes Symbol für Bronze-Tier-VIP-Badge"
-    vip_badge_bronze_custom_css: "Benutzerdefinierte CSS-Stile für Bronze-Tier-VIP-Badge (Inline-Style-Attribut)"
+    vip_badge_bronze_groups: "Gruppen für das Bronze-Tier VIP Abzeichen"
+    vip_badge_bronze_text: "Anzuzeigender Text für das Bronze-Tier VIP Abzeichen"
+    vip_badge_bronze_icon: "Anzuzeigendes Symbol für das Bronze-Tier VIP Abzeichen"
 
-    vip_badge_silver_groups: "Gruppen für Silber-Tier-VIP-Badge"
-    vip_badge_silver_text: "Anzuzeigender Text für Silber-Tier-VIP-Badge"
-    vip_badge_silver_icon: "Anzuzeigendes Symbol für Silber-Tier-VIP-Badge"
-    vip_badge_silver_custom_css: "Benutzerdefinierte CSS-Stile für Silber-Tier-VIP-Badge (Inline-Style-Attribut)"
+    vip_badge_silver_groups: "Gruppen für das Silber-Tier VIP Abzeichen"
+    vip_badge_silver_text: "Anzuzeigender Text für das Silber-Tier VIP Abzeichen"
+    vip_badge_silver_icon: "Anzuzeigendes Symbol für das Silber-Tier VIP Abzeichen"
 
-    vip_badge_gold_groups: "Gruppen für Gold-Tier-VIP-Badge"
-    vip_badge_gold_text: "Anzuzeigender Text für Gold-Tier-VIP-Badge"
-    vip_badge_gold_icon: "Anzuzeigendes Symbol für Gold-Tier-VIP-Badge"
-    vip_badge_gold_custom_css: "Benutzerdefinierte CSS-Stile für Gold-Tier-VIP-Badge (Inline-Style-Attribut)"
+    vip_badge_gold_groups: "Gruppen für das Gold-Tier VIP Abzeichen"
+    vip_badge_gold_text: "Anzuzeigender Text für das Gold-Tier VIP Abzeichen"
+    vip_badge_gold_icon: "Anzuzeigendes Symbol für das Gold-Tier VIP Abzeichen"

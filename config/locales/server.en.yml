@@ -9,14 +9,11 @@ en:
     vip_badge_bronze_groups: "Groups for Bronze tier VIP badge"
     vip_badge_bronze_text: "Text to display for Bronze tier VIP badge"
     vip_badge_bronze_icon: "Icon to display for Bronze tier VIP badge"
-    vip_badge_bronze_custom_css: "Custom CSS styles for Bronze tier VIP badge (inline style attribute)"
 
     vip_badge_silver_groups: "Groups for Silver tier VIP badge"
     vip_badge_silver_text: "Text to display for Silver tier VIP badge"
     vip_badge_silver_icon: "Icon to display for Silver tier VIP badge"
-    vip_badge_silver_custom_css: "Custom CSS styles for Silver tier VIP badge (inline style attribute)"
 
     vip_badge_gold_groups: "Groups for Gold tier VIP badge"
     vip_badge_gold_text: "Text to display for Gold tier VIP badge"
     vip_badge_gold_icon: "Icon to display for Gold tier VIP badge"
-    vip_badge_gold_custom_css: "Custom CSS styles for Gold tier VIP badge (inline style attribute)"

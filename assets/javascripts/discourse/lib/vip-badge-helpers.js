@@ -38,19 +38,6 @@ export function getBadgeIcon(siteSettings, tier) {
 }
 
 /**
- * Get custom CSS for a tier
- * @param {Object} siteSettings - The site settings service
- * @param {string} tier - The VIP tier (gold, silver, bronze)
- * @returns {string} Custom CSS string or empty string
- */
-export function getBadgeCustomCss(siteSettings, tier) {
-  if (tier) {
-    return siteSettings[`vip_badge_${tier}_custom_css`] || "";
-  }
-  return "";
-}
-
-/**
  * Check if VIP badges should be shown based on settings
  * Note: This only checks if the feature is enabled.
  * Visibility permissions are enforced server-side via serializers.

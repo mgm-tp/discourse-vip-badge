@@ -48,10 +48,6 @@ discourse_vip_badge:
     client: true
     default: "medal"
     type: string
-  vip_badge_bronze_custom_css:
-    client: true
-    default: ""
-    type: string
 
   vip_badge_silver_groups:
     client: true
@@ -67,10 +63,6 @@ discourse_vip_badge:
     client: true
     default: "star"
     type: string
-  vip_badge_silver_custom_css:
-    client: true
-    default: ""
-    type: string
 
   vip_badge_gold_groups:
     client: true
@@ -85,8 +77,4 @@ discourse_vip_badge:
   vip_badge_gold_icon:
     client: true
     default: "crown"
-    type: string
-  vip_badge_gold_custom_css:
-    client: true
-    default: ""
     type: string

@@ -30,7 +30,7 @@ function initializeVipBadge(api) {
         return {
           icon: getBadgeIcon(siteSettings, vip_badge_tier),
           title: "VIP User",
-          className: "vip-badge-icon vip-badge-" + vip_badge_tier,
+          className: "vip-badge vip-badge-on-post vip-badge-" + vip_badge_tier,
           text: getBadgeText(
             siteSettings,
             vip_badge_tier,
