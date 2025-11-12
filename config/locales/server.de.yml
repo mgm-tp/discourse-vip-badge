@@ -17,3 +17,5 @@ de:
     vip_badge_gold_groups: "Gruppen für das Gold-Tier VIP Abzeichen"
     vip_badge_gold_text: "Anzuzeigender Text für das Gold-Tier VIP Abzeichen"
     vip_badge_gold_icon: "Anzuzeigendes Symbol für das Gold-Tier VIP Abzeichen"
+
+    vip_badge_disable_styling: "Standardstil für VIP Abzeichen deaktivieren für ein unauffälliges Design oder um benutzerdefiniertes Styling mit Hilfe einer Theme-Komponente zu ermöglichen."

@@ -1,6 +1,7 @@
 import { withPluginApi } from "discourse/lib/plugin-api";
 import VipBadgeProfile from "../components/vip-badge-profile";
 import {
+  getBadgeClasses,
   getBadgeIcon,
   getBadgeText,
   isBadgeEnabled,
@@ -30,7 +31,9 @@ function initializeVipBadge(api) {
         return {
           icon: getBadgeIcon(siteSettings, vip_badge_tier),
           title: "VIP User",
-          className: "vip-badge vip-badge-on-post vip-badge-" + vip_badge_tier,
+          className:
+            getBadgeClasses(siteSettings, vip_badge_tier) +
+            " vip-badge-on-post",
           text: getBadgeText(
             siteSettings,
             vip_badge_tier,

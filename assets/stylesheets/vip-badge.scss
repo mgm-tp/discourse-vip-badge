@@ -1,5 +1,15 @@
-// Base VIP badge styling
+// Base VIP badge styling - minimal styling that's always applied
 .vip-badge-icon {
+  display: inline-block;
+
+  svg {
+    color: inherit !important; // overwrite .names > .fa
+    font-size: inherit !important; // overwrite .names > .fa
+  }
+}
+
+// Default styling - only applied when vip-badge-default-style class is present
+.vip-badge-icon.vip-badge-default-style {
   padding: 0 4px;
   margin: 0 2px;
   border-radius: 4px;
@@ -8,12 +18,6 @@
   font-size: 0.8em !important;
   position: relative;
   overflow: hidden;
-  display: inline-block;
-
-  svg {
-    color: inherit !important; // overwrite .names > .fa
-    font-size: inherit !important; // overwrite .names > .fa
-  }
 
   // Universal shimmer effect using pseudo-element
   &::before {
@@ -36,25 +40,25 @@
     left: -100%;
     transition: left 0.3s ease-in;
   }
-}
 
-// Gold tier (default) - golden gradient
-.vip-badge-icon.vip-badge-gold {
-  background: linear-gradient(135deg, #ffd700, #ffed4e);
-  color: #8a6d00;
-  border: 1px solid #e6c200;
-}
+  // Gold tier (default) - golden gradient
+  &.vip-badge-gold {
+    background: linear-gradient(135deg, #ffd700, #ffed4e);
+    color: #8a6d00;
+    border: 1px solid #e6c200;
+  }
 
-// Silver tier - silver gradient
-.vip-badge-icon.vip-badge-silver {
-  background: linear-gradient(135deg, #c9c9c9, #e8e8e8);
-  color: #4a4a4a;
-  border: 1px solid #a0a0a0;
-}
+  // Silver tier - silver gradient
+  &.vip-badge-silver {
+    background: linear-gradient(135deg, #c9c9c9, #e8e8e8);
+    color: #4a4a4a;
+    border: 1px solid #a0a0a0;
+  }
 
-// Bronze tier - bronze gradient
-.vip-badge-icon.vip-badge-bronze {
-  background: linear-gradient(135deg, #cd7f32, #e8b88a);
-  color: #5c3a1a;
-  border: 1px solid #a66429;
+  // Bronze tier - bronze gradient
+  &.vip-badge-bronze {
+    background: linear-gradient(135deg, #cd7f32, #e8b88a);
+    color: #5c3a1a;
+    border: 1px solid #a66429;
+  }
 }

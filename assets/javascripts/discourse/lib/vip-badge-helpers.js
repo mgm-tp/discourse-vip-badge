@@ -58,3 +58,32 @@ export function isProfileBadgeEnabled(siteSettings) {
     siteSettings.vip_badge_enabled && siteSettings.vip_badge_show_on_profile
   );
 }
+
+/**
+ * Check if default styling should be applied to VIP badges
+ * @param {Object} siteSettings - The site settings service
+ * @returns {boolean} True if default styling should be applied
+ */
+export function shouldUseDefaultStyling(siteSettings) {
+  return !siteSettings.vip_badge_disable_styling;
+}
+
+/**
+ * Get the CSS classes for a VIP badge
+ * @param {Object} siteSettings - The site settings service
+ * @param {string} tier - The VIP tier (gold, silver, bronze)
+ * @returns {string} Space-separated CSS classes
+ */
+export function getBadgeClasses(siteSettings, tier) {
+  const classes = ["vip-badge-icon"];
+
+  if (tier) {
+    classes.push(`vip-badge-${tier}`);
+  }
+
+  if (shouldUseDefaultStyling(siteSettings)) {
+    classes.push("vip-badge-default-style");
+  }
+
+  return classes.join(" ");
+}

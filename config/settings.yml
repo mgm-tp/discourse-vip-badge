@@ -78,3 +78,8 @@ discourse_vip_badge:
     client: true
     default: "crown"
     type: string
+
+  vip_badge_disable_styling:
+    client: true
+    default: false
+    type: bool

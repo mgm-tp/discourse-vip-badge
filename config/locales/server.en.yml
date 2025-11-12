@@ -17,3 +17,5 @@ en:
     vip_badge_gold_groups: "Groups for Gold tier VIP badge"
     vip_badge_gold_text: "Text to display for Gold tier VIP badge"
     vip_badge_gold_icon: "Icon to display for Gold tier VIP badge"
+
+    vip_badge_disable_styling: "Disable default styling for VIP badges for a clean look, or to allow custom styling through a theme component."
