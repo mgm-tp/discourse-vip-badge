@@ -2,7 +2,7 @@
 
 # name: discourse-vip-badge
 # about: Adds a VIP badge to posts from users in designated VIP groups, with configurable visibility
-# version: 1.3.0
+# version: 1.4.0
 # authors: mgm technology partners
 # url: https://github.com/mgm-tp/discourse-vip-badge
 # meta_topic_id: tbd

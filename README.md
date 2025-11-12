@@ -4,10 +4,13 @@ This plugin adds a VIP badge to posts from users who belong to designated VIP gr
 
 ## Features
 
-- Displays a shiny golden VIP badge next to posts of VIP group members
-- Badges are only visible to staff members
-- Configure VIP groups in the settings
-- Display a static text or the group name on the VIP badge
+- Displays a _shiny_ VIP badge next to posts of VIP group members and on their profile page
+- Badges can be configured to be only visible to staff members and/or users of a certain trust level
+- Three predefined VIP groups: bronze, silver and gold
+- Configure which user groups belong to a VIP group in the settings
+- Display a static text or the user group name on the VIP badge
+- Display an optional font awesome icon on the badge
+- Disable the default styling to add your own via a theme component
 
 ## Installation
 
