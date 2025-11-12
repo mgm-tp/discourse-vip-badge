@@ -11,14 +11,15 @@
   display: inline-block;
 
   svg {
-    color: inherit !important;
+    color: inherit !important; // overwrite .names > .fa
+    font-size: inherit !important; // overwrite .names > .fa
   }
 
   // Universal shimmer effect using pseudo-element
   &::before {
     content: "";
     position: absolute;
-    left: 200%;
+    left: 100%;
     width: 100%;
     height: 100%;
     background: linear-gradient(
@@ -33,20 +34,15 @@
 
   &:hover::before {
     left: -100%;
-    transition: left 0.6s ease-in;
+    transition: left 0.3s ease-in;
   }
 }
 
 // Gold tier (default) - golden gradient
-.vip-badge-icon.vip-badge-gold,
-.vip-badge-icon:not(.vip-badge-bronze, .vip-badge-silver) {
+.vip-badge-icon.vip-badge-gold {
   background: linear-gradient(135deg, #ffd700, #ffed4e);
   color: #8a6d00;
   border: 1px solid #e6c200;
-
-  svg {
-    color: #8a6d00 !important;
-  }
 }
 
 // Silver tier - silver gradient
@@ -54,10 +50,6 @@
   background: linear-gradient(135deg, #c9c9c9, #e8e8e8);
   color: #4a4a4a;
   border: 1px solid #a0a0a0;
-
-  svg {
-    color: #4a4a4a !important;
-  }
 }
 
 // Bronze tier - bronze gradient
@@ -65,8 +57,4 @@
   background: linear-gradient(135deg, #cd7f32, #e8b88a);
   color: #5c3a1a;
   border: 1px solid #a66429;
-
-  svg {
-    color: #5c3a1a !important;
-  }
 }

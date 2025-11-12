@@ -44,8 +44,8 @@ export default class VipBadgeProfile extends Component {
     {{#if this.shouldShow}}
       <span
         class="vip-badge-icon vip-badge-{{this.tier}}"
-        style="{{this.customCss}}"
-        title="{{this.badgeText}}"
+        style={{this.customCss}}
+        title={{this.badgeText}}
       >
         {{#if this.badgeIcon}}
           {{icon this.badgeIcon}}
