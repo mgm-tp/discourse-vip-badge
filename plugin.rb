@@ -1,5 +1,9 @@
 # frozen_string_literal: true
 
+# SPDX-License-Identifier: MIT
+# Copyright (c) 2026 to present mgm technology partners GmbH
+# See LICENSE file for details.
+
 # name: discourse-vip-badge
 # about: Adds a VIP badge to posts from users in designated VIP groups, with configurable visibility
 # version: 1.4.0

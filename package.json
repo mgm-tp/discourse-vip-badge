@@ -1,5 +1,9 @@
 {
   "private": true,
+  "scripts": {
+    "license": "node scripts/check-license-headers.mjs --fix",
+    "license:check": "node scripts/check-license-headers.mjs"
+  },
   "devDependencies": {
     "@discourse/lint-configs": "2.32.0",
     "ember-template-lint": "7.9.1",

@@ -1,3 +1,7 @@
+// SPDX-License-Identifier: MIT
+// Copyright (c) 2026 to present mgm technology partners GmbH
+// See LICENSE file for details.
+
 import { withPluginApi } from "discourse/lib/plugin-api";
 import VipBadgeProfile from "../components/vip-badge-profile";
 import {

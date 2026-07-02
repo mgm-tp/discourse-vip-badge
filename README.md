@@ -1,3 +1,7 @@
+<!-- SPDX-License-Identifier: MIT -->
+<!-- Copyright (c) 2026 to present mgm technology partners GmbH -->
+<!-- See LICENSE file for details. -->
+
 # VIP Badge Plugin
 
 This plugin adds a VIP badge to posts from users who belong to designated VIP groups. The badges are only visible to staff members.

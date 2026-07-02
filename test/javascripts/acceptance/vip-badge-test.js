@@ -1,3 +1,7 @@
+// SPDX-License-Identifier: MIT
+// Copyright (c) 2026 to present mgm technology partners GmbH
+// See LICENSE file for details.
+
 import { visit } from "@ember/test-helpers";
 import { test } from "qunit";
 import {

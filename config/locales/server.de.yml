@@ -1,3 +1,7 @@
+# SPDX-License-Identifier: MIT
+# Copyright (c) 2026 to present mgm technology partners GmbH
+# See LICENSE file for details.
+
 de:
   site_settings:
     vip_badge_enabled: "Badge anzeigen"

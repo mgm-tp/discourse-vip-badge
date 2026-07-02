@@ -1,5 +1,9 @@
 # frozen_string_literal: true
 
+# SPDX-License-Identifier: MIT
+# Copyright (c) 2026 to present mgm technology partners GmbH
+# See LICENSE file for details.
+
 # Parts of the core features examples can be skipped like so:
 #   it_behaves_like "having working core features", skip_examples: %i[login likes]
 #
